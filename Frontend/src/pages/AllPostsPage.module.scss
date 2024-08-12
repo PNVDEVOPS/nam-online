@@ -1,0 +1,127 @@
+.root {
+  max-width: 100%;
+  height: auto;
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+.scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.h2 {
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: auto;
+  }
+}
+
+.ads {
+  width: 250px;
+  height: 450px;
+  border-radius: 10px;
+  border: solid 2px #747474;
+  margin-top: 0 auto;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  display: block;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.widget {
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.categories {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.category {
+  color: #000;
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 6px 10px;
+    margin-right: 5px;
+    width: 200px;
+  }
+}
+
+.category.selected {
+  color: #0193DE;
+}
+
+.container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+  scrollbar-width: thin; /* Скрываем стандартный скроллбар */
+  -ms-overflow-style: none; /* IE и Edge */
+  font-size: 18px;
+  font-weight: 400;
+  text-wrap: nowrap;
+  padding: 10px;
+  top: 68px;
+  z-index: 100;
+  position: sticky;
+  background-color: #f0f0f0;
+
+  @media (max-width: 768px) {
+    display: block; /* Добавлено для отображения блока на мобильных устройствах */
+    font-size: 16px;
+    padding: 5px;
+    width: 150px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    margin-left: auto;
+  }
+}
+
+.container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #0193de;
+  border-radius: 5px;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}

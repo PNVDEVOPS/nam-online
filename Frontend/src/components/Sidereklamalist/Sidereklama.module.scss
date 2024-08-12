@@ -1,0 +1,60 @@
+.root {
+  overflow: hidden;
+  overflow-x: hidden;
+  margin-bottom: 15px;
+  position: relative;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 200px;
+  display: flex;
+
+  &:hover {
+    .editButtons {
+      opacity: 1;
+    }
+  }
+
+  &Full {
+    background-color: rgba(0, 0, 0, 0.0);
+    opacity: 1;
+    border: 0px solid rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 40px 0 0 0;
+  }
+}
+
+.editButtons {
+  opacity: 1;
+}
+
+.container {
+  &Full {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.image {
+  max-width: 100%;
+  max-height: 200px;
+  max-width: 250px;
+  display: flex;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 20px;
+
+  &Full {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,46 @@
+.wrapper {
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 700px) {
+      font-size: 0.875rem; // Уменьшаем размер шрифта на мобильных устройствах
+      line-height: 1.75rem;
+      width: 100px;
+    }
+}
+
+.share {
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: #0193DE;
+    border-radius: 10px;
+    cursor: pointer;
+    @media (max-width: 700px) {
+      font-size: 0.875rem; // Уменьшаем размер шрифта на мобильных устройствах
+      line-height: 1.75rem;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  .share:hover {
+    transition: all 0.2s;
+    background-color: #0194deab;
+  }
+
+  
+  .shareIcons {
+    display: flex;
+  }
+  
+  /* Дополнительные стили по вашему усмотрению */
+  
+  .shareText {
+    margin: 10px 0; /* Регулируйте отступ между текстом и иконками */
+  }

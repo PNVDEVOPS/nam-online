@@ -1,0 +1,77 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .root {
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 80%;
+  }
+  
+  .busCard {
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .content {
+    margin-top: 10px;
+  }
+  
+  .user {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+  }
+  
+  .buttonPrimary {
+    background-color: #0193DE;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttonSecondary {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttonPrimary:hover,
+  .buttonSecondary:hover {
+    opacity: 0.8;
+  }
+  

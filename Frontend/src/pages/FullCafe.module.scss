@@ -1,0 +1,42 @@
+
+
+.container {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.menuItemImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.menuItemInfo {
+  padding: 10px;
+  text-align: center;
+}
+
+.menuItemName {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menuItemDescription {
+  margin: 10px 0;
+}
+
+.menuItemPrice {
+  color: #666;
+}

@@ -1,0 +1,63 @@
+.root {
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 200px;
+  display: flex;
+
+  &:hover {
+    .editButtons {
+      opacity: 1;
+    }
+  }
+}
+
+.editButtons {
+  right: 5px;
+  top: 5px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  opacity: 1;
+  transition: all 0.15s ease-in-out;
+}
+
+.editButtons:hover {
+  opacity: 1;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  &Full {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.image {
+  border-radius: 5px;
+  height: 400px;
+  max-width: 250px;
+  display: flex;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 20px;
+
+  &Full {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

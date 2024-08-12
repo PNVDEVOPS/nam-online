@@ -1,0 +1,25 @@
+.root {
+    max-width: 90%;
+    height: auto;
+    
+  }
+  
+  .scroll {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .ads {
+    float: right;
+    width: 10%;
+    height: 450px;
+    border-radius: 10px;
+    border: solid 2px #747474;
+    margin-top: 0 auto;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    display: block;
+  }

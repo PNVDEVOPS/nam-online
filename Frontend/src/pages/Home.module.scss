@@ -1,0 +1,371 @@
+.scroll {
+    height: 660px;
+    overflow-y: scroll;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+    scrollbar-width: none; /* Скрываем стандартный скроллбар */
+    -ms-overflow-style: none; /* IE и Edge */
+  }
+
+  .FullPostWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .news {
+    @media (max-width: 768px) {
+      flex-direction: column;
+      order: 2;
+    }
+  }
+
+  .postspage {
+    flex: 1;
+    width: 100%;
+    @media (max-width: 768px) {
+      margin-left: 0;
+      order: 1;
+      padding-left: 0;
+    }
+  }
+  
+
+  .fullscroll {
+    height: 660px;
+    overflow-y: scroll;
+    width: 250px;
+    padding: 0;
+
+    padding-right: 20px;
+    -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+    scrollbar-width: none; /* Скрываем стандартный скроллбар */
+    -ms-overflow-style: none; /* IE и Edge */
+    max-height: 500px;
+    overflow-y: auto;
+
+
+    @media (max-width: 768px) {
+      max-height: 300px;
+      width: 100%;
+      order: 2;
+      display: block;
+    }
+}
+
+ .sidereklama {
+  display: flex;
+  padding-left: 2.5%;
+  margin-top: 75px;
+  width: 300px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    // height: 300px;
+    margin-top: 20px;
+    order: 3;
+  }
+ }
+
+
+  .allroot {
+    display: flex;
+  }
+
+  .allposts {
+    max-width: 450px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .main {
+    // display:flex;
+    height: 320px;
+    max-width: 100%;
+    // overflow-x: scroll;
+    // margin-right: 15px;
+  }
+
+.wrapper {
+  max-width: fit-content;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.root {
+  width: 40%;
+  margin-top: 50px;
+  padding-left: 0px;
+
+  @media (max-width: 768px) {
+    width: 100%; // Занимает 100% экрана на мобильных устройствах
+  }
+}
+
+.FullPostWrapper {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.FullAfishaWrapper {
+  display: flex;
+}
+
+
+.afishas {
+  height: 530px;
+  width: 60vw;
+  margin: 0 auto; /* Центрирование */
+  @media (max-width: 768px) {
+    width: 90vw; /* Занимает 100% экрана на мобильных устройствах */
+  }
+}
+
+.carousel-container {
+  width: 100%; /* Убедитесь, что контейнер карусели занимает всю доступную ширину */
+}
+
+.carousel-item-padding-40-px {
+  padding: 0 20px; /* Регулировка отступов */
+}
+
+.afishases {
+  height: 530px;
+  width: 60vw;
+  margin: 0 auto; /* Центрирование */
+  @media (max-width: 768px) {
+    width: 90vw; /* Занимает 100% экрана на мобильных устройствах */
+  }
+}
+
+.carousel-container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.carousel-item-padding-40-px {
+  padding: 0 40px;
+}
+
+.banners {
+  // display: flex;
+  // overflow-x: scroll;
+  height: 300px;
+  width: 80%;
+
+  
+  @media (max-width: 768px) {
+    width: 100%; // Занимает 100% экрана на мобильных устройствах
+    height: 300px;
+  }
+}
+
+.text {
+  position: relative;
+  font-size: 18px;
+}
+
+.about {
+  position: relative;
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+  }
+}
+
+.table {
+  td {
+  display: flex;
+    
+    font-size: 18px;
+  }
+}
+
+.taba {
+  
+    padding-right: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tab {
+  padding: 0 10px 0 0;
+}
+
+.submain {
+  margin-top: 12px;
+  height: 320px;
+  width: 530px;
+  border-radius: 10px;
+  border: solid 2px #747474;
+  text-align: center;
+  justify-items: center;
+  align-content: center;
+}
+
+
+.glavn {
+  color: black;
+  cursor: pointer;
+  width: 400px;
+
+}
+
+.glavn:hover {
+  color: #0193DE;
+  transition: 0.2ms;
+}
+
+.adsone {
+  max-width: 250px;
+  max-height: 450px;
+  border-radius: 10px;
+  border: solid 2px #747474;
+  margin-top: 0 auto;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+.sharing{
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #0193DE;
+  color: #fff;
+}
+
+.inforoot {
+  margin-top: 20px;
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: top;
+
+  @media (max-width: 768px) {// При уменьшении ширины экрана, элементы будут располагаться вертикально
+    align-items: top; // Выравниваем элементы по центру
+    
+  }
+}
+
+.info {
+  color: #000;
+  font-weight: 500;
+  text-align: center;
+  width: 100px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    align-items: top;
+    width: 100%; // Уменьшаем ширину элемента на мобильных устройствах
+    margin-bottom: 10px; // Добавляем отступ снизу на мобильных устройствах
+  }
+}
+
+.infoicon {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  background-color: #0193DE;
+  border-radius: 50px;
+
+  @media (max-width: 768px) {
+    width: 80px; // Уменьшаем ширину и высоту иконки на мобильных устройствах
+    height: 80px;
+  }
+
+  @media (max-width: 500px) {
+    width: 65px; // Уменьшаем ширину и высоту иконки на мобильных устройствах
+    height: 65px;
+  }
+}
+
+.information {
+  padding: 0 ;
+  width: 100%;
+
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.widget {
+  margin-left: auto;
+  margin-top: 50px;
+  width: 250px;
+  height: auto;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  display: block;
+
+  @media (max-width: 768px) {
+    width: 100%; // Занимает 100% экрана на мобильных устройствах
+  }
+}
+
+//shedule 
+.schedule {
+  border-collapse: collapse;
+  width: 50%;
+
+}
+
+.schedule th, .schedule td {
+  border: 1px solid #333;
+  text-align: center;
+  padding: 8px;
+}
+
+.schedule th {
+  background-color: #fff; 
+
+  font-size: 1rem;
+}
+
+.schedule .time {
+  font-weight: bold;
+
+}
+
+/* Дополнительные стили для улучшения внешнего вида */
+.schedule .event:nth-child(even) {
+  background-color: #0193DE;
+ 
+}
+
+.event {
+  color: #fff;
+  text-wrap: wrap;
+}
+
+.schedule .event:nth-child(odd) {
+  background-color: #0194de8f;
+
+}

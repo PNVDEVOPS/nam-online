@@ -1,0 +1,64 @@
+.footer {
+  background-color: #2C2C2C;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  position: static;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // При уменьшении ширины экрана, элементы будут располагаться вертикально
+    align-items: center; // Выравниваем элементы по центру
+  }
+}
+
+.footer a {
+  color: #fff; /* Устанавливаем белый цвет для ссылок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.root {
+  width: 90%; // Ширина контейнера будет занимать 90% доступной ширины на мобильных устройствах
+  max-width: 1400px; // Максимальная ширина контейнера для планшетов и десктопов
+  margin: 0 auto; // Центрирование контейнера по горизонтали
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Распределяем 5 столбцов равномерно */
+  gap: 20px; /* Расстояние между столбцами */
+  color: #fff;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // При уменьшении ширины экрана, будет два столбца в ряд
+  }
+}
+
+.logo {
+  align-items: center;
+  border-radius: 5px;
+
+  text-decoration: none;
+  display: flex;
+  background-image: url("./Flag/Flag_of_Namsky_ulus_\(Yakutia\).png");
+  width: 74px;
+  height: 48px;
+  background-size: cover;
+
+  &:hover {
+    background-color: #0193DE;
+  }
+}
+
+.logoroot {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.logoname {
+  margin-left: 10px;
+  text-align: center;
+}

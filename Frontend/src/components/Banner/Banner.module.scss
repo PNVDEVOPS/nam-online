@@ -1,0 +1,209 @@
+/* Общие стили */
+$blue: #0193DE;
+
+/* Корневой контейнер */
+.root {
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  max-height: 300px;
+
+  &:hover {
+    .editButtons {
+      opacity: 1;
+    }
+  }
+
+  &Full {
+    background-color: rgba(0, 0, 0, 0.0);
+    opacity: 1;
+    border: 0px solid rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 40px 0 0 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; // Занимает 100% экрана на мобильных устройствах
+    height: 150px;
+  }
+}
+
+/* Контейнер изображения */
+.image {
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  // margin-right: 20px;
+
+  &Full {
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; // Занимает 100% экрана на мобильных устройствах
+    height: 150px;
+  }
+}
+
+/* Контейнер заднего фона */
+.background {
+  display: none;
+
+  &Full {
+    position: absolute;
+    filter: blur(4px);
+    z-index: -1;
+    display: flex;
+    object-fit: cover;
+    object-position: top;
+    width: 1400px;
+    height: 450px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.671);
+  }
+}
+
+/* Контейнер текста */
+.wrapper {
+  padding: 0px 10px 10px;
+  height: 120px;
+}
+
+/* Заголовок */
+.title {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 500;
+  display: none;
+
+  a {
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &Full {
+    font-size: 50px;
+    font-weight: 500;
+  }
+}
+
+/* Теги */
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+
+  li {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 15px;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
+/* Дополнительная информация */
+.eye {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  margin-right: 20px;
+  opacity: 0.5;
+  margin-left: 0px;
+  gap: 10px;
+}
+
+.postDetails {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 20px;
+    opacity: 0.5;
+
+    svg {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+  }
+}
+
+/* Скелетон */
+.skeleton {
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+
+  &Content {
+    padding: 20px;
+  }
+
+  &Info {
+    margin-left: 50px;
+  }
+}
+
+.skeletonUser {
+  display: flex;
+
+  &Details {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.skeletonTags {
+  display: flex;
+
+  span {
+    margin-right: 15px;
+  }
+}
+
+/* Кнопки редактирования */
+.editButtons {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Блок с прокруткой */
+.block {
+  height: 400px;
+  overflow-y: scroll;
+}

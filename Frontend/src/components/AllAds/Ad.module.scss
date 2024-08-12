@@ -1,0 +1,287 @@
+$blue: #0193DE;
+
+.root {
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+  width: 350px;
+  height: 380px;
+  gap: 20px;
+  display: inline-block;
+  margin-right: 120px;
+
+  &:hover {
+    .editButtons {
+      opacity: 1;
+    }
+  }
+
+  &Full {
+    background-color: rgba(0, 0, 0, 0.0);
+    opacity: 1;
+    border: 0px solid rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    margin: 40px 0 0 40px;
+  }
+
+  
+}
+
+.container {
+  width: 360px;
+  &Full {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.image {
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
+  width: 100%; /* Ширина изображения */
+  height: 240px;
+  object-fit: contain;
+
+  &Full {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    border-radius: 10px;
+    height: 500px; /* Высота изображения */
+    margin: 50px auto;
+  }
+}
+
+.carouselItem {
+  margin: 0 10px;
+}
+
+.bg {
+  display: flex;
+
+  &Full {
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    opacity: 1;
+    position: absolute;
+    width: 1400px;
+    height: 450px;
+    border-radius: 15px;
+  }
+}
+
+.background {
+  display: none;
+  &Full {
+    position: absolute;
+    filter: blur(4px);
+    z-index: -1;
+    display: flex;
+    object-fit: cover;
+    object-position: top;
+    width: 1152px;
+    height: 450px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.671);
+  }
+}
+
+.wrapper {
+  padding: 0px 10px 10px;
+  height: 120px;
+}
+
+.content {
+  margin: 30px 0 50px;
+
+  p {
+    font-size: 18px;
+    line-height: 36px;
+  }
+}
+
+.date {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.indention {
+
+
+  &Full {
+    display: block;
+  }
+}
+.menu {
+  padding-left: 10px;
+
+  &Full {
+    color: #fff;
+    display: inline-block;
+    position: relative;
+  }
+}
+
+.title {
+  color: #000;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+
+  a {
+    margin: 20px 20px;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &Full {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 20px 0;
+  }
+}
+
+* {
+  text-decoration: none;
+}
+
+.desc {
+  margin:0 10px;
+}
+
+.price {
+  color: #000;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 500;
+
+  &Full {
+  font-size: 30px;
+  font-weight: 500;
+  }
+}
+
+.tags {
+  color: #0193DE;
+  font-weight: 400;
+  font-size: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0 20px 0 20px;
+
+  li {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 15px;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
+.eye {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  margin-right: 20px;
+  opacity: 0.5;
+  margin-left: 0px;
+  gap: 10px;
+}
+
+.postDetails {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  color: #000;
+
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 20px;
+    opacity: 0.5;
+
+    svg {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.skeleton {
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+
+  &Content {
+    padding: 20px;
+  }
+
+  &Info {
+    margin-left: 50px;
+  }
+}
+
+.skeletonUser {
+  display: flex;
+
+  &Details {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.skeletonTags {
+  display: flex;
+
+  span {
+    margin-right: 15px;
+  }
+}
+
+.editButtons {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.block {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.a {
+  text-decoration: none;
+}
+

@@ -1,0 +1,36 @@
+.weather-widget {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #0194de80;
+    display: flex;
+    text-align: left;
+
+    margin-bottom: 10px;
+
+  }
+  
+  .weather-widget h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #fff;
+
+  }
+  
+  .weather-widget p {
+
+    font-weight: 400;
+    font-size: 16px;
+    margin: 5px 0;
+    color: #fff;
+  }
+  
+  .weather-icon {
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    margin: 10px auto;
+  }

@@ -1,0 +1,35 @@
+/* AdminPage.module.scss */
+
+.nav {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav li {
+  margin: 10px 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #0193DE;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #0193DE;
+  color: #fff;
+}
+
+.nav a.active {
+  background-color: #0193DE;
+  color: #fff;
+}
