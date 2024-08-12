@@ -43,7 +43,7 @@ import {
   ContactController,
   BusController
 } from "./controllers/index.js";
-import searchRouter from './routes/search.js'; // Импортируем маршруты поиска
+import searchRouter from './routes/search.js'; 
 
 mongoose
   .connect("mongodb+srv://admin:wwwwww@cluster0.qlvioza.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0")
@@ -103,14 +103,14 @@ app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
   });
 });
 
-//bus 
+
 app.get('/buses', BusController.getAll);
 app.get('/buses/:id', BusController.getOne);
 app.post('/buses', checkAuth, busCreateValidation, handleValidationErrors, BusController.create);
 app.delete('/buses/:id', checkAuth, BusController.remove);
 app.patch('/buses/:id', checkAuth, busCreateValidation, handleValidationErrors, BusController.update);
 
-//afishas
+
 app.get("/aftags", AfishaController.getLastTags);
 app.get("/afishas", AfishaController.getAll);
 app.get("/afishas/aftags", AfishaController.getLastTags);
@@ -119,7 +119,7 @@ app.post("/afishas", checkAuth, afishaCreateValidation, handleValidationErrors, 
 app.delete("/afishas/:id",  AfishaController.remove);
 app.patch("/afishas/:id",  afishaCreateValidation, handleValidationErrors, AfishaController.update);
 
-// Events
+
 app.get("/aftags", EventController.getLastTags);
 app.get("/events", EventController.getAll);
 app.get("/events/aftags", EventController.getLastTags);
@@ -128,7 +128,7 @@ app.post("/events", checkAuth, EventCreateValidation, handleValidationErrors, Ev
 app.delete("/events/:id",  EventController.remove);
 app.patch("/events/:id",  EventCreateValidation, handleValidationErrors, EventController.update);
 
-//ads
+
 app.get("/tags", AdController.getLastTags);
 app.get("/ads", AdController.getAll);
 app.get("/ads/tags", AdController.getLastTags);
@@ -143,7 +143,7 @@ app.get("/adcategories/:id", AdCategoryController.getAdCategoryById);
 app.patch("/adcategories/:id", checkAuth, AdCategoryController.updateAdCategory);
 app.delete("/adcategories/:id", checkAuth, AdCategoryController.deleteAdCategory);
 
-//vacation
+
 app.get("/tags", VacationController.getLastTags);
 app.get("/vacations", VacationController.getAll);
 app.get("/vacations/tags", VacationController.getLastTags);
@@ -158,20 +158,20 @@ app.get("/vacationcategories/:id", VacationCategoryController.getVacationCategor
 app.patch("/vacationcategories/:id", checkAuth, VacationCategoryController.updateVacationCategory);
 app.delete("/vacationcategories/:id", checkAuth, VacationCategoryController.deleteVacationCategory);
 
-//banners
+
 app.get("/banners", BannerController.getAll);
 app.get("/banners/:id", BannerController.getOne);
 app.get("banners/tags", BannerController.getLastTags);
 app.post("/banners", checkAuth, BannerCreateValidation, handleValidationErrors, BannerController.create);
 app.delete("/banners/:id", checkAuth, BannerController.remove);
 
-//topreklama
+
 app.get("/topreklamas", TopreklamaController.getAllTopreklamas);
 app.get("/topreklamas/:id", TopreklamaController.getTopreklamaById);
 app.post("/topreklamas", checkAuth, TopreklamaCreateValidation, handleValidationErrors, TopreklamaController.createTopreklama);
 app.delete("/topreklamas/:id", checkAuth, TopreklamaController.removeTopreklama);
 
-//contacts
+
 
 app.get('/contacts', ContactController.getAll);
 app.post('/contacts', checkAuth, contactCreateValidation, handleValidationErrors, ContactController.create);
@@ -179,21 +179,21 @@ app.get('/contacts/:id', ContactController.getOne);
 app.patch('/contacts/:id', checkAuth, contactCreateValidation, handleValidationErrors, ContactController.update);
 app.delete('/contacts/:id', checkAuth, ContactController.remove);
 
-//sidereklama
+
 app.get("/sidereklamas", SidereklamaController.getAll);
 app.get("/sidereklamas/:id", SidereklamaController.getOne);
 app.get("sidereklamas/tags", SidereklamaController.getLastTags);
 app.post("/sidereklamas", checkAuth, SidereklamaCreateValidation, handleValidationErrors, SidereklamaController.create);
 app.delete("/sidereklamas/:id", checkAuth, SidereklamaController.remove);
 
-//importantreklama
+
 app.get("/importantreklamas", ImportantreklamaController.getAll);
 app.get("/importantreklamas/:id", ImportantreklamaController.getOne);
 app.get("importantreklamas/tags", ImportantreklamaController.getLastTags);
 app.post("/importantreklamas", checkAuth, ImportantreklamaCreateValidation, handleValidationErrors, ImportantreklamaController.create);
 app.delete("/importantreklamas/:id", checkAuth, ImportantreklamaController.remove);
 
-// Маршруты для категорий
+
 app.post("/categories", checkAuth, CategoryController.createCategory);
 app.get("/categories", CategoryController.getAllCategories);
 app.get("/categories/:id", CategoryController.getCategoryById);
@@ -212,26 +212,26 @@ app.get("/menucategories/:id", CafeCategoryController.getCafeCategoryById);
 app.patch("/menucategories/:id", checkAuth, CafeCategoryController.updateCafeCategory);
 app.delete("/menucategories/:id", checkAuth, CafeCategoryController.deleteCafeCategory);
 
-// cafe
+
 app.get("/cafes", CafeController.getAllCafes);
 app.get("/cafes/:id", CafeController.getCafeById);
 app.post("/cafes", checkAuth, CafeController.createCafe);
 app.put("/cafes/:id",checkAuth,  CafeController.updateCafe);
 app.delete("/cafes/:id",checkAuth, CafeController.removeCafe);
 
-// Маршруты для меню
+
 app.get("/menus/:id", MenuController.getMenu);
 app.post("/menus",  MenuController.createMenu);
 app.put("/menus/:id",  MenuController.updateMenu);
 app.delete("/menus/:id",  MenuController.deleteMenu);
 
-// Маршруты для пунктов меню
+
 app.get("/menuitems", MenuItemController.getMenuItems);
 app.post("/menuitems",  MenuItemController.createMenuItem);
 app.put("/menuitems/:id",  MenuItemController.updateMenuItem);
 app.delete("/menuitems/:id",  MenuItemController.deleteMenuItem);
 
-app.listen(4444, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
     return console.log(err);
   }
