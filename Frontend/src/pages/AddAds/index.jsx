@@ -143,7 +143,7 @@ export const AddAds = () => {
 
         {images.map((imageUrl, index) => (
           <div key={index}>
-            <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt={`Uploaded ${index + 1}`} />
+            <img className={styles.image} src={`http://87.228.19.239:4444${imageUrl}`} alt={`Uploaded ${index + 1}`} />
             <Button variant="contained" color="error" onClick={() => onClickRemoveImage(index)}>
               Удалить
             </Button>

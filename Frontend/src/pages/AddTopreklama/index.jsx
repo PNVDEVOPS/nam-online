@@ -117,7 +117,7 @@ export const AddTopreklama = () => {
             </Button>
             <img
               className={styles.image}
-              src={`http://localhost:4444${imageUrl}`}
+              src={`http://87.228.19.239:4444${imageUrl}`}
               alt="Uploaded"
             />
           </>

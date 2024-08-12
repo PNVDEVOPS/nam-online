@@ -231,7 +231,7 @@ app.post("/menuitems",  MenuItemController.createMenuItem);
 app.put("/menuitems/:id",  MenuItemController.updateMenuItem);
 app.delete("/menuitems/:id",  MenuItemController.deleteMenuItem);
 
-app.listen(process.env.PORT || 4444, (err) => {
+app.listen(4444, (err) => {
   if (err) {
     return console.log(err);
   }

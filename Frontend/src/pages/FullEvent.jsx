@@ -67,7 +67,7 @@ export const FullEvent = () => {
           id={data.id}
           title={data.title}
           imageUrl={
-            data.imageUrl ? `http://localhost:4444${data.imageUrl}` : ""
+            data.imageUrl ? `http://87.228.19.239:4444${data.imageUrl}` : ""
           }
           createdAt={data.createdAt}
           viewsCount={data.viewsCount}

@@ -44,7 +44,7 @@ import ImportantreklamaList from "../components/Importantreklamalist";
 // import Carousel from 'react-bootstrap/Carousel';
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:4444/posts");
+  const res = await fetch("http://87.228.19.239:4444/posts");
   const posts = await res.json();
 
   return {
@@ -212,7 +212,7 @@ export const Home = () => {
         id={obj._id}
         title={obj.title}
         imageUrl={
-          obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ""
+          obj.imageUrl ? `http://87.228.19.239:4444${obj.imageUrl}` : ""
         }
         user={obj.user}
         createdAt={obj.createdAt}
@@ -262,7 +262,7 @@ export const Home = () => {
                 id={obj._id}
                 title={obj.title}
                 imageUrl={
-                obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ""
+                obj.imageUrl ? `http://87.228.19.239:4444${obj.imageUrl}` : ""
                 }
                 createdAt={obj.createdAt}
                 viewsCount={obj.viewsCount}
@@ -350,7 +350,7 @@ export const Home = () => {
                       title={obj.title}
                       imageUrl={
                         obj.imageUrl
-                          ? `http://localhost:4444${obj.imageUrl}`
+                          ? `http://87.228.19.239:4444${obj.imageUrl}`
                           : ""
                       }
                       isEditable={userData && userData._id === obj.user._id}
@@ -395,7 +395,7 @@ export const Home = () => {
             id={obj._id}
             title={obj.title}
             imageUrl={
-              obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ""
+              obj.imageUrl ? `http://87.228.19.239:4444${obj.imageUrl}` : ""
             }
             user={obj.user}
             createdAt={obj.createdAt}
@@ -439,7 +439,7 @@ export const Home = () => {
                     id={obj._id}
                     title={obj.title}
                     imageUrl={
-                      obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ""
+                      obj.imageUrl ? `http://87.228.19.239:4444${obj.imageUrl}` : ""
                     }
                     user={obj.user}
                     createdAt={obj.createdAt}
