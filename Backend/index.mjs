@@ -1,9 +1,8 @@
 import express from "express";
-import fs from 'fs'
+import fs from 'fs';
 import mongoose from "mongoose";
 import multer from "multer";
 import cors from 'cors';
-
 
 import { 
   registerValidation,
@@ -70,166 +69,166 @@ app.use(express.json());
 app.use(cors());
 app.use("/uploads", express.static("uploads"));
 
-app.post("/auth/login", loginValidation, handleValidationErrors, UserController.login);
-app.post("/auth/register", registerValidation, handleValidationErrors, UserController.register);
+// User routes
+app.post("/api/auth/login", loginValidation, handleValidationErrors, UserController.login);
+app.post("/api/auth/register", registerValidation, handleValidationErrors, UserController.register);
+app.get("/api/auth/me", checkAuth, UserController.getMe);
 
-app.get("/auth/me", checkAuth, UserController.getMe);
-
-app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
+// File upload routes
+app.post("/api/upload", checkAuth, upload.single("image"), (req, res) => {
   res.json({
     url: `/uploads/${req.file.originalname}`,
   });
 });
 
-app.post('/upload', checkAuth, upload.array('images', 12), (req, res) => {
+app.post("/api/upload/multiple", checkAuth, upload.array('images', 12), (req, res) => {
   const files = req.files;
   const urls = files.map(file => `/uploads/${file.filename}`);
   res.json({ urls });
 });
 
-app.use('/search', searchRouter); 
+// Search routes
+app.use('/api/search', searchRouter);
 
-app.get("/tags", PostController.getLastTags);
-app.get("/posts", PostController.getAll);
-app.get("/posts/tags", PostController.getLastTags);
-app.get("/posts/:id", PostController.getOne);
-app.post("/posts", checkAuth, postCreateValidation, handleValidationErrors, PostController.create);
-app.delete("/posts/:id", checkAuth, PostController.remove);
-app.patch("/posts/:id", checkAuth, postCreateValidation, handleValidationErrors, PostController.update);
+// Post routes
+app.get("/api/tags", PostController.getLastTags);
+app.get("/api/posts", PostController.getAll);
+app.get("/api/posts/tags", PostController.getLastTags);
+app.get("/api/posts/:id", PostController.getOne);
+app.post("/api/posts", checkAuth, postCreateValidation, handleValidationErrors, PostController.create);
+app.delete("/api/posts/:id", checkAuth, PostController.remove);
+app.patch("/api/posts/:id", checkAuth, postCreateValidation, handleValidationErrors, PostController.update);
 
-app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
-  res.json({
-    url: `/uploads/${req.file.originalname}`,
-  });
-});
+// Bus routes
+app.get("/api/buses", BusController.getAll);
+app.get("/api/buses/:id", BusController.getOne);
+app.post("/api/buses", checkAuth, busCreateValidation, handleValidationErrors, BusController.create);
+app.delete("/api/buses/:id", checkAuth, BusController.remove);
+app.patch("/api/buses/:id", checkAuth, busCreateValidation, handleValidationErrors, BusController.update);
 
+// Afisha routes
+app.get("/api/aftags", AfishaController.getLastTags);
+app.get("/api/afishas", AfishaController.getAll);
+app.get("/api/afishas/aftags", AfishaController.getLastTags);
+app.get("/api/afishas/:id", AfishaController.getOne);
+app.post("/api/afishas", checkAuth, afishaCreateValidation, handleValidationErrors, AfishaController.create);
+app.delete("/api/afishas/:id", AfishaController.remove);
+app.patch("/api/afishas/:id", afishaCreateValidation, handleValidationErrors, AfishaController.update);
 
-app.get('/buses', BusController.getAll);
-app.get('/buses/:id', BusController.getOne);
-app.post('/buses', checkAuth, busCreateValidation, handleValidationErrors, BusController.create);
-app.delete('/buses/:id', checkAuth, BusController.remove);
-app.patch('/buses/:id', checkAuth, busCreateValidation, handleValidationErrors, BusController.update);
+// Event routes
+app.get("/api/aftags", EventController.getLastTags);
+app.get("/api/events", EventController.getAll);
+app.get("/api/events/aftags", EventController.getLastTags);
+app.get("/api/events/:id", EventController.getOne);
+app.post("/api/events", checkAuth, EventCreateValidation, handleValidationErrors, EventController.create);
+app.delete("/api/events/:id", EventController.remove);
+app.patch("/api/events/:id", EventCreateValidation, handleValidationErrors, EventController.update);
 
+// Ad routes
+app.get("/api/tags", AdController.getLastTags);
+app.get("/api/ads", AdController.getAll);
+app.get("/api/ads/tags", AdController.getLastTags);
+app.get("/api/ads/:id", AdController.getOne);
+app.post("/api/ads", checkAuth, AdCreateValidation, handleValidationErrors, AdController.create);
+app.delete("/api/ads/:id", checkAuth, AdController.remove);
+app.patch("/api/ads/:id", checkAuth, AdCreateValidation, handleValidationErrors, AdController.update);
 
-app.get("/aftags", AfishaController.getLastTags);
-app.get("/afishas", AfishaController.getAll);
-app.get("/afishas/aftags", AfishaController.getLastTags);
-app.get("/afishas/:id", AfishaController.getOne);
-app.post("/afishas", checkAuth, afishaCreateValidation, handleValidationErrors, AfishaController.create);
-app.delete("/afishas/:id",  AfishaController.remove);
-app.patch("/afishas/:id",  afishaCreateValidation, handleValidationErrors, AfishaController.update);
+// AdCategory routes
+app.post("/api/adcategories", checkAuth, AdCategoryController.createAdCategory);
+app.get("/api/adcategories", AdCategoryController.getAllAdCategories);
+app.get("/api/adcategories/:id", AdCategoryController.getAdCategoryById);
+app.patch("/api/adcategories/:id", checkAuth, AdCategoryController.updateAdCategory);
+app.delete("/api/adcategories/:id", checkAuth, AdCategoryController.deleteAdCategory);
 
+// Vacation routes
+app.get("/api/tags", VacationController.getLastTags);
+app.get("/api/vacations", VacationController.getAll);
+app.get("/api/vacations/tags", VacationController.getLastTags);
+app.get("/api/vacations/:id", VacationController.getOne);
+app.post("/api/vacations", checkAuth, VacationCreateValidation, handleValidationErrors, VacationController.create);
+app.delete("/api/vacations/:id", checkAuth, VacationController.remove);
+app.patch("/api/vacations/:id", checkAuth, VacationCreateValidation, handleValidationErrors, VacationController.update);
 
-app.get("/aftags", EventController.getLastTags);
-app.get("/events", EventController.getAll);
-app.get("/events/aftags", EventController.getLastTags);
-app.get("/events/:id", EventController.getOne);
-app.post("/events", checkAuth, EventCreateValidation, handleValidationErrors, EventController.create);
-app.delete("/events/:id",  EventController.remove);
-app.patch("/events/:id",  EventCreateValidation, handleValidationErrors, EventController.update);
+// VacationCategory routes
+app.post("/api/vacationcategories", checkAuth, VacationCategoryController.createVacationCategory);
+app.get("/api/vacationcategories", VacationCategoryController.getAllVacationCategories);
+app.get("/api/vacationcategories/:id", VacationCategoryController.getVacationCategoryById);
+app.patch("/api/vacationcategories/:id", checkAuth, VacationCategoryController.updateVacationCategory);
+app.delete("/api/vacationcategories/:id", checkAuth, VacationCategoryController.deleteVacationCategory);
 
+// Banner routes
+app.get("/api/banners", BannerController.getAll);
+app.get("/api/banners/:id", BannerController.getOne);
+app.get("/api/banners/tags", BannerController.getLastTags);
+app.post("/api/banners", checkAuth, BannerCreateValidation, handleValidationErrors, BannerController.create);
+app.delete("/api/banners/:id", checkAuth, BannerController.remove);
 
-app.get("/tags", AdController.getLastTags);
-app.get("/ads", AdController.getAll);
-app.get("/ads/tags", AdController.getLastTags);
-app.get("/ads/:id", AdController.getOne);
-app.post("/ads", checkAuth, AdCreateValidation, handleValidationErrors, AdController.create);
-app.delete("/ads/:id", checkAuth, AdController.remove);
-app.patch("/ads/:id", checkAuth, AdCreateValidation, handleValidationErrors, AdController.update);
+// Topreklama routes
+app.get("/api/topreklamas", TopreklamaController.getAllTopreklamas);
+app.get("/api/topreklamas/:id", TopreklamaController.getTopreklamaById);
+app.post("/api/topreklamas", checkAuth, TopreklamaCreateValidation, handleValidationErrors, TopreklamaController.createTopreklama);
+app.delete("/api/topreklamas/:id", checkAuth, TopreklamaController.removeTopreklama);
 
-app.post("/adcategories", checkAuth, AdCategoryController.createAdCategory);
-app.get("/adcategories", AdCategoryController.getAllAdCategories);
-app.get("/adcategories/:id", AdCategoryController.getAdCategoryById);
-app.patch("/adcategories/:id", checkAuth, AdCategoryController.updateAdCategory);
-app.delete("/adcategories/:id", checkAuth, AdCategoryController.deleteAdCategory);
+// Contact routes
+app.get("/api/contacts", ContactController.getAll);
+app.post("/api/contacts", checkAuth, contactCreateValidation, handleValidationErrors, ContactController.create);
+app.get("/api/contacts/:id", ContactController.getOne);
+app.patch("/api/contacts/:id", checkAuth, contactCreateValidation, handleValidationErrors, ContactController.update);
+app.delete("/api/contacts/:id", checkAuth, ContactController.remove);
 
+// Sidereklama routes
+app.get("/api/sidereklamas", SidereklamaController.getAll);
+app.get("/api/sidereklamas/:id", SidereklamaController.getOne);
+app.get("/api/sidereklamas/tags", SidereklamaController.getLastTags);
+app.post("/api/sidereklamas", checkAuth, SidereklamaCreateValidation, handleValidationErrors, SidereklamaController.create);
+app.delete("/api/sidereklamas/:id", checkAuth, SidereklamaController.remove);
 
-app.get("/tags", VacationController.getLastTags);
-app.get("/vacations", VacationController.getAll);
-app.get("/vacations/tags", VacationController.getLastTags);
-app.get("/vacations/:id", VacationController.getOne);
-app.post("/vacations", checkAuth, VacationCreateValidation, handleValidationErrors, VacationController.create);
-app.delete("/vacations/:id", checkAuth, VacationController.remove);
-app.patch("/vacations/:id", checkAuth, VacationCreateValidation, handleValidationErrors, VacationController.update);
+// Importantreklama routes
+app.get("/api/importantreklamas", ImportantreklamaController.getAll);
+app.get("/api/importantreklamas/:id", ImportantreklamaController.getOne);
+app.get("/api/importantreklamas/tags", ImportantreklamaController.getLastTags);
+app.post("/api/importantreklamas", checkAuth, ImportantreklamaCreateValidation, handleValidationErrors, ImportantreklamaController.create);
+app.delete("/api/importantreklamas/:id", checkAuth, ImportantreklamaController.remove);
 
-app.post("/vacationcategories", checkAuth, VacationCategoryController.createVacationCategory);
-app.get("/vacationcategories", VacationCategoryController.getAllVacationCategories);
-app.get("/vacationcategories/:id", VacationCategoryController.getVacationCategoryById);
-app.patch("/vacationcategories/:id", checkAuth, VacationCategoryController.updateVacationCategory);
-app.delete("/vacationcategories/:id", checkAuth, VacationCategoryController.deleteVacationCategory);
+// Category routes
+app.post("/api/categories", checkAuth, CategoryController.createCategory);
+app.get("/api/categories", CategoryController.getAllCategories);
+app.get("/api/categories/:id", CategoryController.getCategoryById);
+app.patch("/api/categories/:id", checkAuth, CategoryController.updateCategory);
+app.delete("/api/categories/:id", checkAuth, CategoryController.deleteCategory);
 
+// CafeCategory routes
+app.post("/api/cafecategories", checkAuth, CafeCategoryController.createCafeCategory);
+app.get("/api/cafecategories", CafeCategoryController.getAllCafeCategories);
+app.get("/api/cafecategories/:id", CafeCategoryController.getCafeCategoryById);
+app.patch("/api/cafecategories/:id", checkAuth, CafeCategoryController.updateCafeCategory);
+app.delete("/api/cafecategories/:id", checkAuth, CafeCategoryController.deleteCafeCategory);
 
-app.get("/banners", BannerController.getAll);
-app.get("/banners/:id", BannerController.getOne);
-app.get("banners/tags", BannerController.getLastTags);
-app.post("/banners", checkAuth, BannerCreateValidation, handleValidationErrors, BannerController.create);
-app.delete("/banners/:id", checkAuth, BannerController.remove);
+// MenuCategory routes
+app.post("/api/menucategories", checkAuth, CafeCategoryController.createCafeCategory);
+app.get("/api/menucategories", CafeCategoryController.getAllCafeCategories);
+app.get("/api/menucategories/:id", CafeCategoryController.getCafeCategoryById);
+app.patch("/api/menucategories/:id", checkAuth, CafeCategoryController.updateCafeCategory);
+app.delete("/api/menucategories/:id", checkAuth, CafeCategoryController.deleteCafeCategory);
 
+// Cafe routes
+app.get("/api/cafes", CafeController.getAllCafes);
+app.get("/api/cafes/:id", CafeController.getCafeById);
+app.post("/api/cafes", checkAuth, CafeController.createCafe);
+app.put("/api/cafes/:id", checkAuth, CafeController.updateCafe);
+app.delete("/api/cafes/:id", checkAuth, CafeController.removeCafe);
 
-app.get("/topreklamas", TopreklamaController.getAllTopreklamas);
-app.get("/topreklamas/:id", TopreklamaController.getTopreklamaById);
-app.post("/topreklamas", checkAuth, TopreklamaCreateValidation, handleValidationErrors, TopreklamaController.createTopreklama);
-app.delete("/topreklamas/:id", checkAuth, TopreklamaController.removeTopreklama);
+// Menu routes
+app.get("/api/menus/:id", MenuController.getMenu);
+app.post("/api/menus", checkAuth, MenuController.createMenu);
+app.put("/api/menus/:id", checkAuth, MenuController.updateMenu);
+app.delete("/api/menus/:id", checkAuth, MenuController.deleteMenu);
 
-
-
-app.get('/contacts', ContactController.getAll);
-app.post('/contacts', checkAuth, contactCreateValidation, handleValidationErrors, ContactController.create);
-app.get('/contacts/:id', ContactController.getOne);
-app.patch('/contacts/:id', checkAuth, contactCreateValidation, handleValidationErrors, ContactController.update);
-app.delete('/contacts/:id', checkAuth, ContactController.remove);
-
-
-app.get("/sidereklamas", SidereklamaController.getAll);
-app.get("/sidereklamas/:id", SidereklamaController.getOne);
-app.get("sidereklamas/tags", SidereklamaController.getLastTags);
-app.post("/sidereklamas", checkAuth, SidereklamaCreateValidation, handleValidationErrors, SidereklamaController.create);
-app.delete("/sidereklamas/:id", checkAuth, SidereklamaController.remove);
-
-
-app.get("/importantreklamas", ImportantreklamaController.getAll);
-app.get("/importantreklamas/:id", ImportantreklamaController.getOne);
-app.get("importantreklamas/tags", ImportantreklamaController.getLastTags);
-app.post("/importantreklamas", checkAuth, ImportantreklamaCreateValidation, handleValidationErrors, ImportantreklamaController.create);
-app.delete("/importantreklamas/:id", checkAuth, ImportantreklamaController.remove);
-
-
-app.post("/categories", checkAuth, CategoryController.createCategory);
-app.get("/categories", CategoryController.getAllCategories);
-app.get("/categories/:id", CategoryController.getCategoryById);
-app.patch("/categories/:id", checkAuth, CategoryController.updateCategory);
-app.delete("/categories/:id", checkAuth, CategoryController.deleteCategory);
-
-app.post("/cafecategories", CafeCategoryController.createCafeCategory);
-app.get("/cafecategories", CafeCategoryController.getAllCafeCategories);
-app.get("/cafecategories/:id", CafeCategoryController.getCafeCategoryById);
-app.patch("/cafecategories/:id", checkAuth, CafeCategoryController.updateCafeCategory);
-app.delete("/cafecategories/:id", checkAuth, CafeCategoryController.deleteCafeCategory);
-
-app.post("/menucategories", CafeCategoryController.createCafeCategory);
-app.get("/menucategories", CafeCategoryController.getAllCafeCategories);
-app.get("/menucategories/:id", CafeCategoryController.getCafeCategoryById);
-app.patch("/menucategories/:id", checkAuth, CafeCategoryController.updateCafeCategory);
-app.delete("/menucategories/:id", checkAuth, CafeCategoryController.deleteCafeCategory);
-
-
-app.get("/cafes", CafeController.getAllCafes);
-app.get("/cafes/:id", CafeController.getCafeById);
-app.post("/cafes", checkAuth, CafeController.createCafe);
-app.put("/cafes/:id",checkAuth,  CafeController.updateCafe);
-app.delete("/cafes/:id",checkAuth, CafeController.removeCafe);
-
-
-app.get("/menus/:id", MenuController.getMenu);
-app.post("/menus",  MenuController.createMenu);
-app.put("/menus/:id",  MenuController.updateMenu);
-app.delete("/menus/:id",  MenuController.deleteMenu);
-
-
-app.get("/menuitems", MenuItemController.getMenuItems);
-app.post("/menuitems",  MenuItemController.createMenuItem);
-app.put("/menuitems/:id",  MenuItemController.updateMenuItem);
-app.delete("/menuitems/:id",  MenuItemController.deleteMenuItem);
+// MenuItem routes
+app.get("/api/menuitems", MenuItemController.getMenuItems);
+app.post("/api/menuitems", checkAuth, MenuItemController.createMenuItem);
+app.put("/api/menuitems/:id", checkAuth, MenuItemController.updateMenuItem);
+app.delete("/api/menuitems/:id", checkAuth, MenuItemController.deleteMenuItem);
 
 app.listen(4444, (err) => {
   if (err) {

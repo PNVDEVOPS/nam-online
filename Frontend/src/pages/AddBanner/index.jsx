@@ -135,7 +135,7 @@ export const AddBanner = () => {
             </Button>
             <img
               className={styles.image}
-              src={`http://87.228.19.239:4444${imageUrl}`}
+              src={`https//87.228.19.239:4444/api${imageUrl}`}
               alt="Uploaded"
             />
           </>

@@ -81,7 +81,7 @@ export const Ad = ({
             <div key={index} className={styles.carouselItem}>
               <img
                 className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
-                src={`http://localhost:4444${url}`}
+                src={`https//87.228.19.239:4444/api${url}`}
                 alt={title}
               />
             </div>

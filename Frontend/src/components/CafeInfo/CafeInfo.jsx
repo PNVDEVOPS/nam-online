@@ -26,8 +26,8 @@ export const CafeInfo = ({
     }
   };
 
-  const avatarUrl = avatar ? `http://localhost:4444${avatar}` : '';
-  const menuUrl = menu ? `http://localhost:4444${menu}` : '';
+  const avatarUrl = avatar ? `https//87.228.19.239:4444/api${avatar}` : '';
+  const menuUrl = menu ? `https//87.228.19.239:4444/api${menu}` : '';
 
   console.log("Cafe categories:", cafecategories);
 

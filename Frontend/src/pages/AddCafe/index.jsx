@@ -162,7 +162,7 @@ export const AddCafe = () => {
           </Button>
           <img
             className={styles.image}
-            src={`http://87.228.19.239:4444${avatar}`}
+            src={`https//87.228.19.239:4444${avatar}`}
             alt="Uploaded"
           />
         </>
@@ -243,7 +243,7 @@ export const AddCafe = () => {
           </Button>
           <img
             className={styles.image}
-            src={`http://87.228.19.239:4444${menu}`}
+            src={`https//87.228.19.239:/api${menu}`}
             alt="Uploaded Menu"
           />
         </>

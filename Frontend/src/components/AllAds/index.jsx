@@ -62,7 +62,7 @@ export const AllAds = ({
         <div className={styles.imageContainer}>
           <img
             className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
-            src={`http://localhost:4444${imageUrls[0]}`}
+            src={`https//87.228.19.239:4444/api${imageUrls[0]}`}
             alt={title}
           />
         </div>

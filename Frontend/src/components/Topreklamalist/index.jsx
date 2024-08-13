@@ -26,7 +26,7 @@ const TopreklamaList = () => {
           {obj.imageUrl && (
             <Topreklama
               id={obj._id}
-              imageUrl={`http://localhost:4444${obj.imageUrl}`}
+              imageUrl={`https://87.228.19.239:4444/${obj.imageUrl}`}
               href={obj.href} // Добавляем href
               isFullPost={false}
               isLoading={topreklamas.status === "loading"}

@@ -183,7 +183,7 @@ export const AllPostsPage = () => {
                         key={index}
                         id={obj._id}
                         title={obj.title}
-                        imageUrl={obj.imageUrl ? `http://87.228.19.239:4444${obj.imageUrl}` : ""}
+                        imageUrl={obj.imageUrl ? `https//87.228.19.239:4444${obj.imageUrl}` : ""}
                         createdAt={obj.createdAt}
                         viewsCount={obj.viewsCount}
                         commentsCount={3}

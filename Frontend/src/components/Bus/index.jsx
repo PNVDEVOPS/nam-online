@@ -37,7 +37,7 @@ export const Bus = ({ _id, title, imageUrl, isEditable, isFullPost }) => {
       {imageUrl && (
         <img
           className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
-          src={imageUrl.startsWith('http') ? imageUrl : `http://localhost:4444${imageUrl}`}
+          src={imageUrl.startsWith('http') ? imageUrl : `https//87.228.19.239:4444/api${imageUrl}`}
           alt={title}
         />
       )}

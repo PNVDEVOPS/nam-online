@@ -32,7 +32,7 @@ const WeatherWidget = () => {
   const { main, weather, wind, clouds, sys } = weatherData;
 
   const getWeatherIconUrl = (icon) => {
-    return `http://openweathermap.org/img/wn/${icon}.png`;
+    return `https//openweathermap.org/img/wn/${icon}.png`;
   };
 
   return (

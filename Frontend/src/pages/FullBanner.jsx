@@ -58,7 +58,7 @@ export const FullBanner = () => {
           id={data.id}
           title={data.title}
           imageUrl={
-            data.imageUrl ? `http://87.228.19.239:4444${data.imageUrl}` : ""
+            data.imageUrl ? `https//87.228.19.239:4444/api${data.imageUrl}` : ""
           }
           createdAt={data.createdAt}
           viewsCount={data.viewsCount}
@@ -106,7 +106,7 @@ export const FullBanner = () => {
             <PostSub
               id={data._id}
               title={data.title}
-              imageUrl={data.imageUrl ? `http://localhost:4444${data.imageUrl}` : ''}
+              imageUrl={data.imageUrl ? `https//localhost:4444${data.imageUrl}` : ''}
               
               createdAt={data.createdAt}
               viewsCount={data.viewsCount}
