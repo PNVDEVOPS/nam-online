@@ -4,7 +4,7 @@ import axios from '../../axios';
 export const fetchCategories = createAsyncThunk(
   'categories/fetchCategories',
   async () => {
-    const { data } = await axios.get('/categories');
+    const { data } = await axios.get('/api/categories');
     return data;
   }
 );
@@ -12,7 +12,7 @@ export const fetchCategories = createAsyncThunk(
 export const fetchRemoveCategory = createAsyncThunk(
   'categories/fetchRemoveCategory',
   async (id) => {
-    await axios.delete(`/categories/${id}`);
+    await axios.delete(`/api/categories/${id}`);
     return id; // Возвращаем id, чтобы можно было обработать удаление в редьюсере
   }
 );

@@ -24,7 +24,7 @@ const SidereklamaList = () => {
           {obj.imageUrl && (
             <Sidereklama
               id={obj._id}
-              imageUrl={`https//87.228.19.239:4444/api${obj.imageUrl}`}
+              imageUrl={`https://xn--80ayb.online:4444/api${obj.imageUrl}`}
               href={obj.href} // Добавляем href
               isFullPost={false}
               isLoading={sidereklamas.status === "loading"}

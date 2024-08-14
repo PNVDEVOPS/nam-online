@@ -2,6 +2,7 @@
   "name": "nam-online",
   "version": "0.1.0",
   "private": true,
+  "proxy": "/xn--80ayb.online:4444",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -32,7 +33,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --host xn--80ayb.online",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -4,7 +4,7 @@ import axios from '../../axios';
 export const fetchAdCategories = createAsyncThunk(
   'adcategories/fetchAdCategories',
   async () => {
-    const { data } = await axios.get('/adcategories');
+    const { data } = await axios.get('/api/adcategories');
     return data;
   }
 );

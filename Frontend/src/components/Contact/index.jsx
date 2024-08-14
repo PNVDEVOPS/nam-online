@@ -64,7 +64,7 @@ export const Contact = ({
       {imageUrl && (
         <img
           className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
-          src={`https//87.228.19.239:4444/api${imageUrl}`}
+          src={`https://xn--80ayb.online:4444/api${imageUrl}`}
           alt={title}
         />
       )}

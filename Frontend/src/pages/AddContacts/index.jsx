@@ -113,7 +113,7 @@ export const AddContact = () => {
 
         {image && (
           <div>
-            <img className={styles.image} src={`https//87.228.19.239:4444/api${image}`} alt="Uploaded" />
+            <img className={styles.image} src={`https://xn--80ayb.online:4444/api${image}`} alt="Uploaded" />
             <Button variant="contained" color="error" onClick={onClickRemoveImage}>
               Удалить
             </Button>

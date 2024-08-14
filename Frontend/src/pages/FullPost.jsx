@@ -105,7 +105,7 @@ export const FullPost = () => {
           <Post
             id={data._id}
             title={data.title}
-            imageUrl={data.imageUrl ? `https//87.228.19.239:4444/api${data.imageUrl}` : ''}
+            imageUrl={data.imageUrl ? `https://xn--80ayb.online:4444/api${data.imageUrl}` : ''}
             createdAt={data.createdAt}
             viewsCount={data.viewsCount}
             commentsCount={3}

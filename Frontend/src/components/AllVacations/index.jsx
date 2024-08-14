@@ -59,7 +59,7 @@ export const AllVacations = ({
         {imageUrls.length > 0 && (
           <img
             className={clsx(styles.image, { [styles.imageFull]: isFullPost })}
-            src={`https//87.228.19.239:4444/api${imageUrls[0]}`}
+            src={`https://xn--80ayb.online:4444/api${imageUrls[0]}`}
             alt={title}
           />
         )}

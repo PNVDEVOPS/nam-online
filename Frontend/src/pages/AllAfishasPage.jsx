@@ -82,7 +82,7 @@ export const AllAfishasPage = () => {
                     id={obj._id}
                     title={obj.title}
                     imageUrl={
-                      obj.imageUrl ? `https//87.228.19.239:4444/api${obj.imageUrl}` : ""
+                      obj.imageUrl ? `https://xn--80ayb.online:4444/api${obj.imageUrl}` : ""
                     }
                     user={obj.user}
                     createdAt={obj.createdAt}
@@ -115,7 +115,7 @@ export const AllAfishasPage = () => {
                     id={obj._id}
                     title={obj.title}
                     imageUrl={
-                      obj.imageUrl ? `https//localhost:4444/api${obj.imageUrl}` : ""
+                      obj.imageUrl ? `https://xn--80ayb.online:4444/api${obj.imageUrl}` : ""
                     }
                     user={obj.user}
                     createdAt={obj.createdAt}

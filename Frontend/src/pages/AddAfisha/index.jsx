@@ -142,7 +142,7 @@ export const AddAfisha = () => {
             <Button variant="contained" color="error" onClick={onClickRemoveImage}>
               Удалить
             </Button>
-            <img className={styles.image} src={`https//87.228.19.239:4444/api${imageUrl}`} alt="Uploaded" />
+            <img className={styles.image} src={`https://xn--80ayb.online:4444/api${imageUrl}`} alt="Uploaded" />
           </>
         )}
         <br />

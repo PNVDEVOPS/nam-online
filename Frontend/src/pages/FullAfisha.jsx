@@ -61,7 +61,7 @@ export const FullAfisha = () => {
           id={data.id}
           title={data.title}
           imageUrl={
-            data.imageUrl ? `https//87.228.19.239:4444${data.imageUrl}` : ""
+            data.imageUrl ? `https://xn--80ayb.online:4444${data.imageUrl}` : ""
           }
           createdAt={data.createdAt}
           viewsCount={data.viewsCount}

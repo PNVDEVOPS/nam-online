@@ -26,8 +26,8 @@ export const CafeInfo = ({
     }
   };
 
-  const avatarUrl = avatar ? `https//87.228.19.239:4444/api${avatar}` : '';
-  const menuUrl = menu ? `https//87.228.19.239:4444/api${menu}` : '';
+  const avatarUrl = avatar ? `https://xn--80ayb.online:4444/api${avatar}` : '';
+  const menuUrl = menu ? `https://xn--80ayb.online:4444/api${menu}` : '';
 
   console.log("Cafe categories:", cafecategories);
 

@@ -23,7 +23,7 @@ const AllImportantreklamaPage = () => {
           {importantreklamas.items.map((item) => (
             <div key={item._id}>
               <h2>{item.title}</h2>
-              <img src={`https//87.228.19.239:4444${item.imageUrl}`} alt={item.title} />
+              <img src={`https://xn--80ayb.online:4444${item.imageUrl}`} alt={item.title} />
               {/* <a href={item.href}>Link</a> */}
             </div>
           ))}

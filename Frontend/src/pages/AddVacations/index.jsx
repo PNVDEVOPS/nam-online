@@ -145,7 +145,7 @@ export const AddVacations = () => {
 
         {images.map((imageUrl, index) => (
           <div key={index}>
-            <img className={styles.image} src={`https//87.228.19.239:4444/api${imageUrl}`} alt={`Uploaded ${index + 1}`} />
+            <img className={styles.image} src={`https://xn--80ayb.online:4444/api${imageUrl}`} alt={`Uploaded ${index + 1}`} />
             <Button variant="contained" color="error" onClick={() => onClickRemoveImage(index)}>
               Удалить
             </Button>
