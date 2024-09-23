@@ -7,10 +7,12 @@ import { useForm } from "react-hook-form";
 import styles from "./Login.module.scss";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAuth, selectIsAuth } from "../../redux/slices/auth";
-import { Navigate } from 'react-router-dom';
+import {Navigate} from 'react-router-dom'
+
+
 
 export const Login = () => {
-  const isAuth = useSelector(selectIsAuth);
+  const isAuth = useSelector(selectIsAuth)
   const dispatch = useDispatch();
   const {
     register,
@@ -25,10 +27,10 @@ export const Login = () => {
   });
 
   const onSubmit = async (values) => {
-    const data = await dispatch(fetchAuth(values));
+    const data = await dispatch(fetchAuth(values))
     
     if (!data.payload) {
-      return alert('Не удалось зарегистрироваться!');
+      return alert('Не удалось зарегистрироваться!')
     }
 
     if ('token' in data.payload) {
@@ -37,7 +39,7 @@ export const Login = () => {
   };
 
   if (isAuth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/"/>
   }
 
   return (
@@ -46,26 +48,23 @@ export const Login = () => {
         Вход в аккаунт
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextField
-          className={styles.field}
-          label="E-Mail"
-          error={Boolean(errors.email?.message)}
-          helperText={errors.email?.message}
-          type="email"
-          {...register('email', { required: 'Укажите почту' })}
-          fullWidth
-        />
-        <TextField
-          className={styles.field}
-          label="Пароль"
-          error={Boolean(errors.password?.message)}
-          helperText={errors.password?.message}
-          {...register('password', { required: 'Введите пароль' })}
-          fullWidth
-        />
-        <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
-          Войти
-        </Button>
+      <TextField
+        className={styles.field}
+        label="E-Mail"
+        error={Boolean(errors.email?.message)}
+        helperText={errors.email?.message}
+        type="email"
+        {...register('email', {required: 'Укажите почту'})}
+        fullWidth
+      />
+      <TextField className={styles.field} label="Пароль" 
+      error={Boolean(errors.password?.message)}
+      helperText={errors.password?.message}
+      {...register('password', {required: 'Введите пароль'})}
+       fullWidth />
+      <Button disabled={!isValid} type="submit" size="large" variant="contained" fullWidth>
+        Войти
+      </Button>
       </form>
     </Paper>
   );
